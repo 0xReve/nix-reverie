@@ -1,0 +1,19 @@
+# Nix build outputs
+result
+result-*
+
+# Direnv
+.direnv/
+.direnv
+
+# Nix REPL / evaluation caches
+.nix-eval-*
+
+# NixOS interactive test driver history
+**/.nixos-test-history
+
+# Editor/OS cruft
+.DS_Store
+*.swp
+__pycache__/
+*.pyc
