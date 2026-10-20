@@ -18,6 +18,7 @@ in
       nixos.graphics
       nixos.nvidia
       nixos.steam
+      nixos.gaming
       nixos.greeter
       nixos.hyprland
       nixos.hyprland-nvidia
