@@ -7,6 +7,7 @@ in
   flake.modules.nixos."hosts/erie" = {
     imports = [
       nixos.base
+      nixos.locale
       nixos.nixpkgs
       nixos.home-manager
       nixos.tools
