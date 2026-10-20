@@ -10,6 +10,7 @@ in
       nixos.locale
       nixos.nixpkgs
       nixos.home-manager
+      nixos.network
       nixos.tools
       nixos."hardware/erie"
       nixos."users/reve"
