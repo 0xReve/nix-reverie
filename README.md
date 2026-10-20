@@ -18,6 +18,11 @@ A dendritic NixOS flake that will grow into reverie!
 |------|------|
 | `erie` | `reve` |
 
+Machine-specific disks, locale overrides, and sops files live in a separate
+private flake input (`nix-secrets`). Fork this repo, create your own private
+secrets repo, and point the `nix-secrets` input at it. Put your
+`nixos-generate-config` hardware module under `hosts/<name>/hardware-config.nix`.
+
 ## Commands
 
 ```bash
