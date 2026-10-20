@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "console_title_template": "{{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "blue",
+          "background": "transparent",
+          "template": "{{ .Path }} ",
+          "properties": {
+            "style": "full",
+            "home_icon": "~"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "green",
+          "background": "transparent",
+          "template": "{{ .HEAD }} ",
+          "properties": {
+            "branch_icon": "",
+            "cherry_pick_icon": "",
+            "commit_icon": "",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "",
+            "no_commits_icon": "",
+            "rebase_icon": "",
+            "revert_icon": "",
+            "tag_icon": ""
+          }
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "red",
+          "background": "transparent",
+          "template": "{{ if gt .Code 0 }}[{{ .Code }}] {{ end }}"
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "yellow",
+          "background": "transparent",
+          "template": "{{ if .Ms }}{{ .FormattedMs }} {{ end }}",
+          "properties": {
+            "threshold": 5000
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "white",
+          "background": "transparent",
+          "template": "$"
+        }
+      ]
+    }
+  ]
+}
