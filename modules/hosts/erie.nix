@@ -14,6 +14,8 @@ in
       nixos.network
       nixos.tools
       nixos.sops
+      nixos.graphics
+      nixos.nvidia
       nixos."hardware/erie"
       nixos."users/reve"
     ];
