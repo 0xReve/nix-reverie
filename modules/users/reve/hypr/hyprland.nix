@@ -7,6 +7,7 @@
       settings = {
         "$mod" = "SUPER";
         "$terminal" = "kitty";
+        "$browser" = "zen-twilight";
 
         general = {
           gaps_in = 5;
@@ -21,9 +22,10 @@
           follow_mouse = 1;
         };
 
-        # Usable session binds (terminal, focus, workspaces).
+        # Usable session binds (terminal, browser, focus, workspaces).
         bind = [
           "$mod, T, exec, $terminal"
+          "$mod, B, exec, $browser"
           "$mod, C, killactive,"
           "$mod, M, exit,"
           "$mod, F, fullscreen,"
