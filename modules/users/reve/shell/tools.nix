@@ -38,6 +38,15 @@
         enableZshIntegration = true;
       };
 
+      programs.pay-respects = {
+        enable = true;
+        enableZshIntegration = true;
+        options = [
+          "--alias"
+          "fuck"
+        ];
+      };
+
       programs.zsh = {
         shellAliases = {
           c = "clear";
