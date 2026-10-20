@@ -5,6 +5,11 @@
     {
       home.sessionVariables.TERMINAL = "${pkgs.kitty}/bin/kitty";
 
+      # Preferred terminal for xdg-terminal-exec (Ambxst TUI launches, etc.).
+      xdg.configFile."xdg-terminals.list".text = ''
+        kitty.desktop
+      '';
+
       programs.kitty = {
         enable = true;
         extraConfig = ''

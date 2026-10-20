@@ -1,4 +1,4 @@
-# Zen Browser for reve (default http(s) handler).
+# Zen Browser for reve (BROWSER + default http(s) mime via setAsDefaultBrowser).
 { inputs, ... }:
 {
   flake.modules.homeManager."users/reve" = {
