@@ -13,6 +13,7 @@ in
       nixos.home-manager
       nixos.network
       nixos.tools
+      nixos.ssh
       nixos.sops
       nixos.graphics
       nixos.nvidia

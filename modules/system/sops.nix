@@ -19,8 +19,10 @@
         # Built against sops-nix's own nixpkgs (not 25.11) so Go matches upstream.
         package = inputs.sops-nix.packages.${pkgs.stdenv.hostPlatform.system}.sops-install-secrets;
         age = {
+          # Host ed25519 key (via ssh). Keep the age file until nix-secrets
+          # lists that host recipient and secrets are re-encrypted.
+          sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
           keyFile = "/home/reve/.config/sops/age/keys.txt";
-          sshKeyPaths = [ ];
         };
         gnupg.sshKeyPaths = [ ];
       };
