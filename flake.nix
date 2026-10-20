@@ -37,6 +37,9 @@
     # Auto-updated Cursor AppImage flake (tracks upstream closely).
     cursor.url = "github:omarcresp/cursor-flake";
 
+    # Declarative Discord clients (Equibop / Equicord for reve).
+    nixcord.url = "github:4evy/nixcord";
+
     nix-secrets = {
       url = "git+ssh://git@github.com/0xReve/nix-secrets.git";
       flake = false;
