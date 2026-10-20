@@ -1,5 +1,5 @@
 # Desk workstation leaf. Grow the import list as aspects land.
-{ config, ... }:
+{ config, inputs, ... }:
 let
   inherit (config.flake.modules) nixos;
 in
@@ -8,10 +8,12 @@ in
     imports = [
       nixos.base
       nixos.locale
+      "${inputs.nix-secrets}/locale.nix"
       nixos.nixpkgs
       nixos.home-manager
       nixos.network
       nixos.tools
+      nixos.sops
       nixos."hardware/erie"
       nixos."users/reve"
     ];

@@ -45,7 +45,11 @@
           deadnix
           statix
           nh
+          sops
+          age
+          ssh-to-age
         ];
+
         inputsFrom = [ config.treefmt.build.devShell ];
         shellHook = config.pre-commit.installationScript;
       };
