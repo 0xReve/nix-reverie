@@ -25,6 +25,13 @@
     # Own nixpkgs (unstable): sops-install-secrets needs Go >= 1.26; 25.11 defaults to 1.25.
     sops-nix.url = "github:Mic92/sops-nix";
 
+    # Twilight channel rehosts artifacts for reproducible hashes.
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     nix-secrets = {
       url = "git+ssh://git@github.com/0xReve/nix-secrets.git";
       flake = false;
