@@ -16,8 +16,6 @@
         defaultSopsFile = "${inputs.nix-secrets}/sops/${config.networking.hostName}.yaml";
         defaultSopsFormat = "yaml";
         validateSopsFiles = false;
-        # Built against sops-nix's own nixpkgs (not 25.11) so Go matches upstream.
-        package = inputs.sops-nix.packages.${pkgs.stdenv.hostPlatform.system}.sops-install-secrets;
         age = {
           # Host ed25519 key (via ssh). Keep the age file until nix-secrets
           # lists that host recipient and secrets are re-encrypted.

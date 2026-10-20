@@ -2,11 +2,11 @@
   description = "Dendritic multi-host NixOS flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -22,7 +22,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Own nixpkgs (unstable): sops-install-secrets needs Go >= 1.26; 25.11 defaults to 1.25.
     sops-nix.url = "github:Mic92/sops-nix";
 
     # Twilight channel rehosts artifacts for reproducible hashes.
@@ -32,7 +31,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Own nixpkgs (unstable): Ambxst + axctl / Quickshell track upstream, not 25.11.
+    # Own nixpkgs (unstable): Ambxst + axctl / Quickshell track upstream, not 26.05.
     ambxst.url = "github:Axenide/Ambxst";
 
     # Auto-updated Cursor AppImage flake (tracks upstream closely).

@@ -7,8 +7,6 @@
 
       programs.zsh = {
         enable = true;
-        # Avoid nix-zsh-completions _nixos-rebuild clash on nixos-25.11.
-        enableCompletion = false;
         autosuggestion.enable = true;
         syntaxHighlighting.enable = true;
 

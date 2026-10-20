@@ -22,7 +22,6 @@ in
           "networkmanager"
         ];
         shell = pkgs.zsh;
-        # Avoid programs.zsh.enable (completions collide with nixos-rebuild-ng on 25.11).
         ignoreShellProgramCheck = true;
         hashedPasswordFile = config.sops.secrets."passwords/reve".path;
       };

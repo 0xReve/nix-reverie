@@ -17,7 +17,7 @@
       };
 
       environment.systemPackages = with pkgs; [
-        helvum
+        crosspipe
         pavucontrol
         pamixer
         pipewire
