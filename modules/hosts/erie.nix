@@ -16,6 +16,9 @@ in
       nixos.sops
       nixos.graphics
       nixos.nvidia
+      nixos.greeter
+      nixos.hyprland
+      nixos.hyprland-nvidia
       nixos."hardware/erie"
       nixos."users/reve"
     ];
