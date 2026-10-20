@@ -20,6 +20,18 @@
           ignoreSpace = true;
         };
 
+        # Prompt is oh-my-posh. fzf/zoxide come from programs.* zsh integration.
+        oh-my-zsh = {
+          enable = true;
+          theme = "";
+          plugins = [
+            "git"
+            "sudo"
+            "extract"
+            "command-not-found"
+          ];
+        };
+
         initContent = ''
           if [[ "$TERM" == "linux" ]]; then
             eval "$(oh-my-posh init zsh --config ${./omp-tty.omp.json})"
