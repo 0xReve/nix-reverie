@@ -19,6 +19,7 @@ in
       nixos.greeter
       nixos.hyprland
       nixos.hyprland-nvidia
+      nixos.audio
       nixos."hardware/erie"
       nixos."users/reve"
     ];
