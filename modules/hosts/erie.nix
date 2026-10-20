@@ -21,6 +21,7 @@ in
       nixos.hyprland-nvidia
       nixos.audio
       nixos.bluetooth
+      nixos.ambxst
       nixos."hardware/erie"
       nixos."users/reve"
     ];

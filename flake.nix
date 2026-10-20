@@ -32,6 +32,9 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # Own nixpkgs (unstable): Ambxst + axctl / Quickshell track upstream, not 25.11.
+    ambxst.url = "github:Axenide/Ambxst";
+
     nix-secrets = {
       url = "git+ssh://git@github.com/0xReve/nix-secrets.git";
       flake = false;
