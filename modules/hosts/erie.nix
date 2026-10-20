@@ -19,6 +19,7 @@ in
       nixos.nvidia
       nixos.steam
       nixos.gaming
+      nixos.bigscreen-beyond
       nixos.greeter
       nixos.hyprland
       nixos.hyprland-nvidia
