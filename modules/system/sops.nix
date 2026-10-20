@@ -16,6 +16,8 @@
         defaultSopsFile = "${inputs.nix-secrets}/sops/${config.networking.hostName}.yaml";
         defaultSopsFormat = "yaml";
         validateSopsFiles = false;
+        # Built against sops-nix's own nixpkgs (not 25.11) so Go matches upstream.
+        package = inputs.sops-nix.packages.${pkgs.stdenv.hostPlatform.system}.sops-install-secrets;
         age = {
           keyFile = "/home/reve/.config/sops/age/keys.txt";
           sshKeyPaths = [ ];

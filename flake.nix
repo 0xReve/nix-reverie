@@ -22,10 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Own nixpkgs (unstable): sops-install-secrets needs Go >= 1.26; 25.11 defaults to 1.25.
+    sops-nix.url = "github:Mic92/sops-nix";
 
     nix-secrets = {
       url = "git+ssh://git@github.com/0xReve/nix-secrets.git";
