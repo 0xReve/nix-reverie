@@ -1,7 +1,7 @@
 # Kitty terminal for reve (HM, not systemPackages).
 {
   flake.modules.homeManager."users/reve" =
-    { pkgs, ... }:
+    { config, pkgs, ... }:
     {
       home.sessionVariables.TERMINAL = "${pkgs.kitty}/bin/kitty";
 
@@ -14,6 +14,9 @@
         enable = true;
         extraConfig = ''
           confirm_os_window_close 0
+          # Ambxst KittyGenerator writes this from the active palette and
+          # reloads kitty with SIGUSR1 on theme change.
+          include ${config.home.homeDirectory}/.cache/ambxst/kitty.conf
         '';
       };
     };
