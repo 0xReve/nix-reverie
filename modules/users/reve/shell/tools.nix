@@ -13,6 +13,8 @@
         bat-extras.batman
         bat-extras.batpipe
         bat-extras.prettybat
+        lazygit
+        fastfetch
       ];
 
       programs.bat = {
