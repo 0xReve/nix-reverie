@@ -12,6 +12,7 @@ in
       nixos.nixpkgs
       nixos.home-manager
       nixos.network
+      nixos.mt7927
       nixos.tools
       nixos.ssh
       nixos.sops
