@@ -21,6 +21,7 @@ in
       nixos.graphics
       nixos.nvidia
       nixos.lianli-linux
+      nixos.openrazer
       nixos.steam
       nixos.gaming
       nixos.bigscreen-beyond
