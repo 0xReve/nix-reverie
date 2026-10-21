@@ -6,5 +6,8 @@
       inherit (final.stdenv.hostPlatform) system;
       config.allowUnfree = true;
     };
+
+    # Upstream needs rustc ≥1.98; build on unstable.
+    lianli-linux = final.unstable.callPackage ../../pkgs/lianli-linux/package.nix { };
   };
 }

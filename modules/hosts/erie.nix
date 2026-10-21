@@ -17,6 +17,7 @@ in
       nixos.sops
       nixos.graphics
       nixos.nvidia
+      nixos.lianli-linux
       nixos.steam
       nixos.gaming
       nixos.bigscreen-beyond
