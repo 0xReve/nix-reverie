@@ -15,6 +15,7 @@ in
       nixos.mt7927
       nixos.tools
       nixos.ssh
+      nixos.security
       nixos.sops
       nixos.kernel-zen
       nixos.graphics
