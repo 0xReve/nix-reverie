@@ -20,8 +20,8 @@ Compose a host in a private flake that follows this library:
 
 ```nix
 inputs.nix-reverie.url = "github:0xReve/nix-reverie";
-# local work:
-# inputs.nix-reverie.url = "path:/home/YOU/.config/project-nix";
+# local work (sibling under project-nix/):
+# inputs.nix-reverie.url = "path:../nix-reverie";
 ```
 
 Import aspects from `inputs.nix-reverie.modules.nixos` / `.homeManager`, add
