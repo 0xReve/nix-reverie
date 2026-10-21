@@ -40,6 +40,12 @@
     # Declarative Discord clients (Equibop / Equicord for reve).
     nixcord.url = "github:4evy/nixcord";
 
+    # Packaged LazyVim (josh/lazy-nvim-nix) for reve's nvim wrapper.
+    lazy-nvim-nix = {
+      url = "github:josh/lazy-nvim-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # MT7927 BT firmware extract (WiFi is mainline on 7.2+; blob not in linux-firmware).
     mt7927.url = "github:cmspam/mt7927-nixos";
 

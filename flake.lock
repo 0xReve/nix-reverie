@@ -192,6 +192,26 @@
         "type": "github"
       }
     },
+    "lazy-nvim-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1791553033,
+        "narHash": "sha256-/jL/BoAyDtCA+B0uNDokj4cT2KwoBiIVSiYY5t9a2H8=",
+        "owner": "josh",
+        "repo": "lazy-nvim-nix",
+        "rev": "adb341a966161f0672c2dc97abbaf3854bfdc4d4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "josh",
+        "repo": "lazy-nvim-nix",
+        "type": "github"
+      }
+    },
     "mediatek-mt7927-dkms": {
       "flake": false,
       "locked": {
@@ -451,6 +471,7 @@
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "lazy-nvim-nix": "lazy-nvim-nix",
         "mt7927": "mt7927",
         "nix-secrets": "nix-secrets",
         "nixcord": "nixcord",
