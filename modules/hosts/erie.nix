@@ -25,6 +25,7 @@ in
       nixos.steam
       nixos.gaming
       nixos.obs
+      nixos.mangohud
       nixos.bigscreen-beyond
       nixos.greeter
       nixos.hyprland
