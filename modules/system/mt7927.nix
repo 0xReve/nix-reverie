@@ -6,7 +6,7 @@
     { pkgs, ... }:
     let
       # cmspam ships BT under mediatek/mt6639/; btmtk loads mediatek/mt7927/.
-      mt7927Firmware = inputs.mt7927.packages.${pkgs.system}.firmware;
+      mt7927Firmware = inputs.mt7927.packages.${pkgs.stdenv.hostPlatform.system}.firmware;
 
       btFirmwarePathFix = pkgs.runCommand "mediatek-mt7927-bt-firmware-path" { } ''
         mkdir -p "$out/lib/firmware/mediatek/mt7927"
