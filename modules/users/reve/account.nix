@@ -30,7 +30,7 @@ in
 
       nix.settings.trusted-users = [ "reve" ];
 
-      programs.nh.flake = "/home/reve/.config/project-nix";
+      programs.nh.flake = "/home/reve/.config/nix-secrets";
 
       home-manager.users.reve = flakeConfig.flake.modules.homeManager."users/reve";
     };

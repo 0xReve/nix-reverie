@@ -1,8 +1,8 @@
-# Secrets via sops-nix (age).
+# Secrets via sops-nix (age). Machine flakes set defaultSopsFile.
 { inputs, ... }:
 {
   flake.modules.nixos.sops =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       imports = [ inputs.sops-nix.nixosModules.sops ];
 
@@ -13,7 +13,6 @@
       ];
 
       sops = {
-        defaultSopsFile = "${inputs.nix-secrets}/sops/${config.networking.hostName}.yaml";
         defaultSopsFormat = "yaml";
         validateSopsFiles = false;
         age = {

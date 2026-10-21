@@ -1,5 +1,5 @@
 {
-  description = "Dendritic multi-host NixOS flake";
+  description = "Dendritic NixOS module library (nix-reverie)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
@@ -47,14 +47,6 @@
     lazy-nvim-nix = {
       url = "github:josh/lazy-nvim-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # MT7927 BT firmware extract (WiFi is mainline on 7.2+; blob not in linux-firmware).
-    mt7927.url = "github:cmspam/mt7927-nixos";
-
-    nix-secrets = {
-      url = "git+ssh://git@github.com/0xReve/nix-secrets.git";
-      flake = false;
     };
 
     treefmt-nix = {
