@@ -37,6 +37,9 @@
     # Auto-updated Cursor AppImage flake (tracks upstream closely).
     cursor.url = "github:omarcresp/cursor-flake";
 
+    # Spiced Spotify for reve.
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
     # Declarative Discord clients (Equibop / Equicord for reve).
     nixcord.url = "github:4evy/nixcord";
 
