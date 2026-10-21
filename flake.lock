@@ -46,11 +46,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792379669,
-        "narHash": "sha256-tkME6jj8rn7m7r0Qk7JWqDafBQU8TdaPCMsikBfwSc0=",
+        "lastModified": 1792552669,
+        "narHash": "sha256-UEcDRj9mLlMPVoeHQCVIwr3+UzyueF6GbC7zxhhwDbU=",
         "owner": "omarcresp",
         "repo": "cursor-flake",
-        "rev": "319f9d9569292c7265da1e41687cef92a16896ca",
+        "rev": "b86af03c73297b6c6fed417e22ae24834d3b2daa",
         "type": "github"
       },
       "original": {
