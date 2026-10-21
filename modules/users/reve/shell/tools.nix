@@ -15,6 +15,9 @@
         bat-extras.prettybat
         lazygit
         fastfetch
+        unzip
+        zip
+        p7zip
       ];
 
       programs.bat = {

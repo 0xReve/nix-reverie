@@ -3,7 +3,10 @@
   flake.modules.homeManager."users/reve" =
     { pkgs, ... }:
     {
-      home.packages = [ pkgs.nautilus ];
+      home.packages = with pkgs; [
+        nautilus
+        file-roller
+      ];
       home.sessionVariables.EXPLORER = "nautilus";
 
       xdg.mimeApps = {
