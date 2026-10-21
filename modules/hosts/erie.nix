@@ -15,6 +15,7 @@ in
       nixos.tools
       nixos.ssh
       nixos.sops
+      nixos.kernel-zen
       nixos.graphics
       nixos.nvidia
       nixos.lianli-linux
