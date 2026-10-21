@@ -24,6 +24,7 @@ in
       nixos.openrazer
       nixos.steam
       nixos.gaming
+      nixos.obs
       nixos.bigscreen-beyond
       nixos.greeter
       nixos.hyprland
