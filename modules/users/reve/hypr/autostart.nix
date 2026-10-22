@@ -2,8 +2,17 @@
 # 1 steam · 2 zen + equibop · 3 spotify
 {
   flake.modules.homeManager."users/reve" = {
+    # XDPH share-picker theming + screencopy FPS cap (DMA-BUF kept; no force_shm).
+    xdg.configFile."hypr/xdph.conf".text = ''
+      screencopy {
+          max_fps = 60
+      }
+    '';
+
     wayland.windowManager.hyprland.settings = {
       exec-once = [
+        "dbus-update-activation-environment --systemd --all"
+        "systemctl --user import-environment QT_QPA_PLATFORMTHEME QT_STYLE_OVERRIDE"
         "steam"
         "zen-twilight"
         "equibop"
