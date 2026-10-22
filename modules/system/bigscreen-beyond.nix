@@ -26,7 +26,8 @@
       environment.systemPackages = [ pkgs.lighthouse-steamvr ];
 
       # Playback = Strap (0105); mic = Beyond HMD (0101). Inactive ACP profiles
-      # leave PipeWire with no sink/source and silent SteamVR audio.
+      # leave PipeWire with no sink/source and silent SteamVR audio. Sticky
+      # mute on the HMD capture node also silences the mic across sessions.
       services.pipewire.wireplumber.extraConfig."51-bigscreen-beyond" = {
         "monitor.alsa.rules" = [
           {
@@ -49,6 +50,28 @@
             actions = {
               update-props = {
                 "device.profile" = "input:analog-stereo";
+              };
+            };
+          }
+          {
+            matches = [
+              { "node.name" = "~alsa_input.usb-Bigscreen_Beyond_.*"; }
+            ];
+            actions = {
+              update-props = {
+                "node.mute" = false;
+                # Below typical USB sinks (~1100) so Komplete stays desk default.
+                "priority.session" = 500;
+              };
+            };
+          }
+          {
+            matches = [
+              { "node.name" = "~alsa_output.usb-Bigscreen_Beyond_Audio_Strap.*"; }
+            ];
+            actions = {
+              update-props = {
+                "priority.session" = 500;
               };
             };
           }
