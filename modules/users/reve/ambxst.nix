@@ -24,11 +24,14 @@
     in
     {
       # Stub so Hypr can source before the first Ambxst run writes the real file.
+      # Seed exec-once here; Ambxst regenerates the rest. Do not also set
+      # settings.exec-once = ambxst or Hypr starts two shells.
       # Writable path (not an HM symlink) so axctl can rewrite it later.
       home.activation.ambxstHyprStub = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
         mkdir -p "$HOME/.local/share/ambxst"
-        if [ ! -e "$HOME/.local/share/ambxst/hyprland.conf" ]; then
-          touch "$HOME/.local/share/ambxst/hyprland.conf"
+        conf="$HOME/.local/share/ambxst/hyprland.conf"
+        if [ ! -e "$conf" ] || [ ! -s "$conf" ]; then
+          printf 'exec-once = ambxst\n' > "$conf"
         fi
       '';
 
@@ -95,10 +98,7 @@
       };
 
       wayland.windowManager.hyprland = {
-        # Ambxst owns binds, gaps, and appearance via the generated share file.
-        # Keep a single exec-once so the shell starts even when that file is empty.
-        settings.exec-once = [ "ambxst" ];
-
+        # Ambxst owns binds, gaps, appearance, and exec-once via the share file.
         extraConfig = ''
           # Ambxst (binds / appearance). Overrides below if needed.
           source = ~/.local/share/ambxst/hyprland.conf
