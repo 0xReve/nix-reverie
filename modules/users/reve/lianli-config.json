@@ -1,0 +1,441 @@
+{
+  "turn_off_lcds_on_shutdown": false,
+  "default_fps": 30.0,
+  "hardware_video": false,
+  "hid_backend": "hidraw",
+  "lcds": [],
+  "fan_curves": [
+    {
+      "name": "CPU Temp",
+      "temp_source": {
+        "type": "hwmon",
+        "name": "k10temp",
+        "label": "temp1",
+        "device_path": "0000:00:18.3"
+      },
+      "curve": [
+        [
+          30.0,
+          30.0
+        ],
+        [
+          60.0,
+          70.0
+        ],
+        [
+          85.0,
+          100.0
+        ]
+      ]
+    },
+    {
+      "name": "GPU Temp",
+      "temp_source": {
+        "type": "nvidia_gpu",
+        "gpu_index": 0,
+        "metric": "temp"
+      },
+      "curve": [
+        [
+          30.0,
+          30.0
+        ],
+        [
+          60.0,
+          70.0
+        ],
+        [
+          85.0,
+          100.0
+        ]
+      ]
+    }
+  ],
+  "fans": {
+    "speeds": [
+      {
+        "device_id": "hid:0cf2:a102:1-7:port0",
+        "speeds": [
+          255,
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:1-7:port1",
+        "speeds": [
+          255,
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:1-7:port2",
+        "speeds": [
+          "GPU Temp",
+          "GPU Temp",
+          "GPU Temp",
+          "GPU Temp"
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:1-7:port3",
+        "speeds": [
+          "CPU Temp",
+          "CPU Temp",
+          "CPU Temp",
+          "CPU Temp"
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:port0",
+        "speeds": [
+          128,
+          128,
+          128,
+          0
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:port1",
+        "speeds": [
+          128,
+          128,
+          128,
+          0
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:port2",
+        "speeds": [
+          "GPU Temp",
+          "GPU Temp",
+          "GPU Temp",
+          "GPU Temp"
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:port3",
+        "speeds": [
+          "CPU Temp",
+          "CPU Temp",
+          "CPU Temp",
+          "CPU Temp"
+        ]
+      }
+    ],
+    "update_interval_ms": 1000,
+    "hysteresis_temp": 1.0,
+    "hysteresis_pwm": 5
+  },
+  "rgb": {
+    "enabled": true,
+    "openrgb_server": false,
+    "openrgb_port": 6743,
+    "openrgb_regions": false,
+    "openrgb_per_fan_zones": false,
+    "devices": [
+      {
+        "device_id": "hid:0416:8051:1-12.2.3",
+        "mb_rgb_sync": false,
+        "zones": [
+          {
+            "zone_index": 0,
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "swap_lr": false,
+            "swap_tb": false
+          }
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:1-7:group2",
+        "mb_rgb_sync": false,
+        "zones": [],
+        "regions": [
+          {
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "flip": false
+          }
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:1-7:group3",
+        "mb_rgb_sync": false,
+        "zones": [],
+        "regions": [
+          {
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "flip": false
+          }
+        ]
+      },
+      {
+        "device_id": "hid:0416:8051:8-12.2.3",
+        "mb_rgb_sync": false,
+        "zones": [
+          {
+            "zone_index": 0,
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "swap_lr": false,
+            "swap_tb": false
+          }
+        ],
+        "regions": [
+          {
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "flip": false
+          }
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:group0",
+        "mb_rgb_sync": false,
+        "zones": []
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:group2",
+        "mb_rgb_sync": false,
+        "zones": [],
+        "regions": [
+          {
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "flip": false
+          }
+        ]
+      },
+      {
+        "device_id": "hid:0cf2:a102:8-7:group3",
+        "mb_rgb_sync": false,
+        "zones": [],
+        "regions": [
+          {
+            "effect": {
+              "mode": "Static",
+              "colors": [
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ],
+                [
+                  255,
+                  255,
+                  255
+                ]
+              ],
+              "speed": 2,
+              "brightness": 4,
+              "direction": "Clockwise",
+              "scope": "All",
+              "disabled": false
+            },
+            "flip": false
+          }
+        ]
+      }
+    ],
+    "merge_lighting": {
+      "enabled": false,
+      "kind": "Continuous",
+      "effect_memory": [
+        {
+          "mode": "Rainbow",
+          "colors": [],
+          "speed": 2,
+          "brightness": 4,
+          "direction": "Clockwise",
+          "scope": "All",
+          "disabled": false
+        }
+      ],
+      "device_order": [
+        "hid:0416:8051:1-12.2.3"
+      ],
+      "directions": [
+        "Clockwise"
+      ],
+      "effect": {
+        "mode": "Rainbow",
+        "colors": [],
+        "speed": 2,
+        "brightness": 4,
+        "direction": "Clockwise",
+        "scope": "All",
+        "disabled": false
+      },
+      "disabled_devices": []
+    }
+  },
+  "aio": {
+    "hid:0416:8051:8-12.2.3": {
+      "pump_target_rpm": "CPU Temp",
+      "fan_speeds": [
+        "off",
+        "off",
+        "off",
+        "off"
+      ]
+    },
+    "hid:0416:8051:1-12.2.3": {
+      "pump_target_rpm": "CPU Temp",
+      "fan_speeds": [
+        "off",
+        "off",
+        "off",
+        "off"
+      ]
+    }
+  },
+  "ene6k77": {
+    "hid:0cf2:a102:8-7": {
+      "fan_quantities": {
+        "0": 0,
+        "1": 0
+      }
+    }
+  },
+  "wireless_groups": {},
+  "thermal_alert": {
+    "cpu": {
+      "enabled": false,
+      "threshold": 80,
+      "alert_color": [
+        255,
+        0,
+        0
+      ]
+    },
+    "gpu": {
+      "enabled": false,
+      "threshold": 80,
+      "alert_color": [
+        255,
+        0,
+        0
+      ]
+    }
+  },
+  "rgb_drift_detection_enabled": true,
+  "rgb_drift_detection_interval_ms": 1000
+}
