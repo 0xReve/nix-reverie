@@ -25,9 +25,11 @@
 
       environment.systemPackages = [ pkgs.lighthouse-steamvr ];
 
-      # Playback = Strap (0105); mic = Beyond HMD (0101). Inactive ACP profiles
-      # leave PipeWire with no sink/source and silent SteamVR audio. Sticky
-      # mute on the HMD capture node also silences the mic across sessions.
+      # Playback: Beyondex HD Audio (Fluid Immersive) and legacy Strap.
+      # Mic: Beyond HMD. Inactive ACP profiles leave PipeWire with no
+      # sink/source and silent SteamVR audio. Sticky mute on the HMD capture
+      # node also silences the mic across sessions. Keep VR nodes below
+      # Komplete so desk priority stays on the interface when SteamVR is off.
       services.pipewire.wireplumber.extraConfig."51-bigscreen-beyond" = {
         "monitor.alsa.rules" = [
           {
@@ -60,7 +62,6 @@
             actions = {
               update-props = {
                 "node.mute" = false;
-                # Below typical USB sinks (~1100) so Komplete stays desk default.
                 "priority.session" = 500;
               };
             };
@@ -72,6 +73,36 @@
             actions = {
               update-props = {
                 "priority.session" = 500;
+              };
+            };
+          }
+          {
+            matches = [
+              { "node.name" = "~alsa_output.usb-Fluid_Immersive__Inc._Beyondex_HD_Audio.*"; }
+            ];
+            actions = {
+              update-props = {
+                "priority.session" = 500;
+              };
+            };
+          }
+          {
+            matches = [
+              { "node.name" = "~alsa_output.usb-Native_Instruments_Komplete_Audio_6_MK2.*"; }
+            ];
+            actions = {
+              update-props = {
+                "priority.session" = 1500;
+              };
+            };
+          }
+          {
+            matches = [
+              { "node.name" = "~alsa_input.usb-Native_Instruments_Komplete_Audio_6_MK2.*"; }
+            ];
+            actions = {
+              update-props = {
+                "priority.session" = 1500;
               };
             };
           }
